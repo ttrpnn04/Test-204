@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Background Color</title>
+    <link rel="stylesheet" href="changecolor.css">
+</head>
+<body>
+    <h1>Change Background Color</h1>
+    <button id="changeColorButton">Change Color</button>
+    <input type="text" id="textInput" placeholder="Type something...">
+
+    <script>
+        function changeBackgroundColor() {
+            const colors = ['#FF5733', '#33FF57', '#3357FF', '#F3FF33', '#FF33A8'];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            document.body.style.backgroundColor = randomColor;
+        }
+
+        function showMessage() {
+            alert('Button clicked!');
+        }
+
+        document.getElementById('changeColorButton').onclick = changeBackgroundColor;
+        document.getElementById('changeColorButton').onmouseover = function() {
+            console.log('Mouse over the button');
+        };
+        document.getElementById('textInput').onkeyup = function(event) {
+            console.log('Key up:', event.key);
+        };
+
+        document.getElementById('changeColorButton').addEventListener('click', showMessage);
+    </script>
+</body>
+</html>
